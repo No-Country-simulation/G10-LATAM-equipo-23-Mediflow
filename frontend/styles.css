@@ -89,16 +89,24 @@ main {
 
 .intro,
 .workflow-section {
-  width: min(1120px, calc(100% - 64px));
+  width: 100%;
   margin-inline: auto;
+  padding-inline: clamp(24px, 8vw, 112px);
 }
 
 .topbar {
-  display: flex;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  display: grid;
+  width: 100%;
   min-height: 76px;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
+  padding-inline: clamp(24px, 6vw, 96px);
   border-bottom: 1px solid rgb(32 43 42 / 8%);
+  background: rgb(255 255 255 / 96%);
+  backdrop-filter: blur(10px);
 }
 
 .brand {
@@ -136,6 +144,7 @@ main {
 }
 
 .nav-link {
+  position: relative;
   display: flex;
   height: 100%;
   align-items: center;
@@ -144,9 +153,52 @@ main {
 }
 
 .nav-link.is-active {
-  border-bottom: 2px solid var(--green);
   color: var(--ink);
   font-weight: 600;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  background: var(--green);
+  content: "";
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 18px;
+}
+
+.login-button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 18px;
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.login-button:hover {
+  transform: translateY(-1px);
+  background: var(--green-dark);
 }
 
 .environment-label,
@@ -168,18 +220,26 @@ main {
 }
 
 .intro {
+  position: relative;
   display: flex;
   min-height: 282px;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
   padding-block: 45px 40px;
+  overflow: hidden;
+}
+
+.intro-copy {
+  position: relative;
+  z-index: 3;
+  width: 56%;
 }
 
 .eyebrow {
   margin: 0 0 9px;
   color: var(--green);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
 }
@@ -216,41 +276,40 @@ h1 span {
   font-size: 14px;
 }
 
-.privacy-note {
-  display: flex;
-  width: 290px;
-  flex: 0 0 auto;
-  align-items: flex-start;
-  gap: 13px;
-  padding: 17px;
-  border: 1px solid #dce8de;
-  border-radius: 12px;
-  background: rgb(255 255 255 / 72%);
+.health-image-note {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 44%;
+  margin: 0;
+  overflow: visible;
+  isolation: isolate;
 }
 
-.privacy-icon {
-  display: grid;
-  width: 28px;
-  height: 28px;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 9px;
-  background: var(--green-soft);
-  color: var(--green);
-  font-size: 17px;
+.health-image-note::before {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 600px;
+  width: 800px;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 3px solid var(--green);
+  pointer-events: none;
+  content: "";
 }
 
-.privacy-note strong {
+.health-image-note img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
   display: block;
-  margin: 1px 0 4px;
-  font-size: 16px;
-}
-
-.privacy-note p {
-  margin-bottom: 0;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.5;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .workspace {
@@ -265,10 +324,11 @@ h1 span {
 .input-column,
 .results-column {
   min-width: 0;
-  padding: 32px clamp(24px, 8vw, 112px);
+  padding: 32px clamp(24px, 4vw, 64px);
 }
 
 .input-column {
+  border-right: 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -286,7 +346,7 @@ h1 span {
 
 .section-heading h2 {
   margin-bottom: 0;
-  font-size: 21px;
+  font-size: 32px;
   letter-spacing: -0.6px;
 }
 
@@ -294,7 +354,7 @@ h1 span {
 .detail-label,
 .priority-label {
   color: #89938e;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -326,7 +386,7 @@ h1 span {
 .demo-banner p {
   margin-bottom: 0;
   color: #697670;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .scenario-picker {
@@ -340,7 +400,7 @@ h1 span {
 .field-label {
   margin-bottom: 8px;
   color: #374441;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
 }
 
@@ -413,14 +473,14 @@ h1 span {
 }
 
 .scenario-button strong {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .scenario-button small {
   overflow: hidden;
   margin-top: 2px;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 11px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -437,7 +497,7 @@ h1 span {
 .field-hint {
   margin-bottom: 8px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 13px;
 }
 
 textarea {
@@ -450,7 +510,7 @@ textarea {
   border-radius: 8px;
   background: #fdfefd;
   color: var(--ink);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.55;
 }
 
@@ -912,7 +972,10 @@ textarea::placeholder {
 }
 
 .workflow-section {
-  padding: 67px 0 43px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 67px 43px;
 }
 
 .workflow-heading {
@@ -994,61 +1057,71 @@ textarea::placeholder {
 
 .footer {
   display: flex;
+  width: 100%;
   min-height: 70px;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  padding-inline: clamp(24px, 8vw, 112px);
   border-top: 1px solid rgb(32 43 42 / 9%);
+  background: var(--green);
+  color: var(--white);
 }
 
 .footer-brand {
   gap: 7px;
   font-size: 15px;
+  color: var(--white);
 }
 
 .footer-brand .brand-mark {
   width: 22px;
   height: 22px;
   border-radius: 7px 7px 7px 2px;
+  background: var(--white);
+  color: var(--green);
   font-size: 16px;
+}
+
+.footer-brand .brand-period {
+  color: var(--white);
 }
 
 .footer > p {
   margin-bottom: 0;
-  color: #89938e;
+  color: rgb(255 255 255 / 82%);
   font-size: 10px;
 }
 
 @media (min-width: 1320px) {
-  .topbar,
-  main,
-  .footer {
-    width: min(1120px, calc(100% - 96px));
+  .topbar {
+    padding-inline: clamp(96px, 8vw, 128px);
   }
 }
 
 @media (max-width: 760px) {
-  .topbar,
-  .footer {
-    width: min(100% - 36px, 560px);
-  }
-
   main {
     width: 100%;
   }
 
   .intro,
   .workflow-section {
-    width: min(100% - 36px, 560px);
+    width: 100%;
+    padding-inline: 18px;
   }
 
   .topbar {
     min-height: 66px;
+    grid-template-columns: 1fr auto;
+    padding-inline: 18px;
   }
 
   .main-nav {
+    grid-row: 2;
+    grid-column: 1 / -1;
     gap: 16px;
     height: 66px;
+    justify-self: center;
   }
 
   .nav-link {
@@ -1064,6 +1137,15 @@ textarea::placeholder {
     height: 8px;
   }
 
+  .header-actions {
+    gap: 8px;
+  }
+
+  .login-button {
+    min-height: 36px;
+    padding-inline: 14px;
+  }
+
   .intro {
     min-height: unset;
     align-items: flex-start;
@@ -1076,8 +1158,23 @@ textarea::placeholder {
     max-width: 500px;
   }
 
-  .privacy-note {
+  .intro-copy {
     width: 100%;
+  }
+
+  .health-image-note {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 282px;
+  }
+
+  .health-image-note::before {
+    left: 50%;
+    width: 220px;
+    transform: translate(-50%, -50%);
   }
 
   .workspace {
@@ -1110,18 +1207,14 @@ textarea::placeholder {
 }
 
 @media (max-width: 460px) {
-  .topbar,
-  .footer {
-    width: calc(100% - 28px);
-  }
-
   main {
     width: 100%;
   }
 
   .intro,
   .workflow-section {
-    width: calc(100% - 28px);
+    width: 100%;
+    padding-inline: 14px;
   }
 
   .brand {
@@ -1149,6 +1242,14 @@ textarea::placeholder {
   .input-column,
   .results-column {
     padding: 19px 15px;
+  }
+
+  .footer {
+    min-height: 120px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-inline: 14px;
   }
 
   .section-heading {
@@ -1220,6 +1321,7 @@ textarea::placeholder {
     justify-content: space-between;
     gap: 5px 12px;
     padding-block: 13px;
+    padding-inline: 18px;
   }
 
   .footer > p:last-child {

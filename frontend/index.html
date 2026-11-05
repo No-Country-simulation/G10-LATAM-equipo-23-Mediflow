@@ -25,10 +25,13 @@
         <a class="nav-link is-active" href="#triagem">Triagem</a>
         <a class="nav-link" href="#como-funciona">Como funciona</a>
       </nav>
-      <span class="environment-label">
-        <span class="status-dot" aria-hidden="true"></span>
-        Ambiente de demonstração
-      </span>
+      <div class="header-actions">
+        <span class="environment-label">
+          <span class="status-dot" aria-hidden="true"></span>
+          Ambiente de demonstração
+        </span>
+        <a class="login-button" href="#login">Login</a>
+      </div>
     </header>
 
     <main id="conteudo">
@@ -41,13 +44,9 @@
             organiza informações; a decisão permanece com profissionais de saúde.
           </p>
         </div>
-        <aside class="privacy-note" aria-label="Aviso de privacidade">
-          <span class="privacy-icon" aria-hidden="true">✳</span>
-          <div>
-            <strong>Use somente dados fictícios</strong>
-            <p>Esta demonstração não envia nem armazena informações.</p>
-          </div>
-        </aside>
+        <figure class="health-image-note">
+          <img src="assets/med.png" alt="Profissional de saúde">
+        </figure>
       </section>
 
       <section class="workspace" id="triagem" aria-label="Área de triagem">
@@ -240,8 +239,8 @@
 
     <footer class="footer">
       <a class="brand footer-brand" href="#">
-        <span class="brand-mark" aria-hidden="true">c</span>
-        <span>clareia<span class="brand-period">.</span></span>
+        <span class="brand-mark" aria-hidden="true">m</span>
+        <span>Medi.flow<span class="brand-period">.</span></span>
       </a>
       <p>Protótipo acadêmico · Hackathon ONE</p>
       <p>Não destinado a uso clínico</p>
