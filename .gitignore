@@ -11,3 +11,4 @@ backend/data/
 !docs/
 !docs/media/
 !docs/media/.gitkeep
+authorize.json
