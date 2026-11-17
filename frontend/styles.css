@@ -1597,8 +1597,22 @@ textarea::placeholder {
   }
 }
 
-/* Abolição da tela de login para demonstração pública */
+/* Abolição da tela de login e exibição direta da interface principal */
 .login-screen,
 .login-button {
   display: none !important;
+}
+
+header.topbar[hidden],
+main[hidden],
+footer.footer[hidden] {
+  display: grid !important;
+}
+
+main[hidden] {
+  display: block !important;
+}
+
+footer.footer[hidden] {
+  display: flex !important;
 }
