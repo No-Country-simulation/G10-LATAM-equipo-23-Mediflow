@@ -1,5 +1,8 @@
 [build]
+  base = ""
   publish = "frontend"
+  command = ""
+  functions = ""
 
 [[redirects]]
   from = "/*"
