@@ -1596,3 +1596,9 @@ textarea::placeholder {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Abolição da tela de login para demonstração pública */
+.login-screen,
+.login-button {
+  display: none !important;
+}
