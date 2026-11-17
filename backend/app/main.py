@@ -648,6 +648,10 @@ async def process_clinical_file(
         ) from exc
 
     return await run_in_threadpool(
-        _process_clinical_
-pii_mapping,
+        _process_clinical_text,
+        extracted_text,
+        contents,
+        extension,
+        CONTENT_TYPES[extension],
+        pii_mapping,
     )
