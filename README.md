@@ -28,10 +28,7 @@ O **MediFlow** é uma plataforma de apoio à triagem documental e encaminhamento
 ---
 
 ## Demonstração em Vídeo
-
-> **Nota:** Para ativar o player nativo do GitHub, abra este ficheiro no editor web do GitHub, apague a linha do link abaixo e arraste o ficheiro `.mp4` diretamente para este espaço.
-
-https://github.com/Israzuba0023/G10-LATAM-equipo-23-Mediflow/raw/main/docs/media/demo-mediflow.gif
+![Demonstração MediFlow](docs/media/demo-mediflow.gif)
 
 ---
 
