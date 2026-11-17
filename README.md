@@ -1,21 +1,24 @@
-# MediFlow — Triagem Clínica Inteligente & Auditoria Humana
+<div align="center">
+  <img src="frontend/favicon.svg" alt="MediFlow Logo" width="72" />
+  <h1>MediFlow — Triagem Clínica Inteligente & Auditoria Humana</h1>
+  <p><strong>Hackathon Alura / Oracle ONE (G10 LATAM) — Equipa 23</strong></p>
 
-**Hackathon Alura / Oracle ONE (G10 LATAM) — Equipa 23**
-
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Aceder_Aplicação-1B4332?style=for-the-badge&logo=netlify&logoColor=white)](https://SEU-LINK-DO-NETLIFY.netlify.app)
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Groq AI](https://img.shields.io/badge/LLM-Groq_Engine-F55036?style=for-the-badge)
-![Security](https://img.shields.io/badge/Security-PII_Anonymizer_&_Guardrails-0F172A?style=for-the-badge)
-
----
+  <p>
+    <a href="https://SEU-LINK-DO-NETLIFY.netlify.app" target="_blank">
+      <img src="https://img.shields.io/badge/Live_Demo-Aceder_Aplicação-1B4332?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Demo" />
+    </a>
+    <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+    <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
+    <img src="https://img.shields.io/badge/LLM-Groq_Engine-F55036?style=for-the-badge" alt="Groq AI" />
+    <img src="https://img.shields.io/badge/Security-PII_Anonymizer_&_Guardrails-0F172A?style=for-the-badge" alt="Security" />
+  </p>
+</div>
 
 ## Links do Projeto
 
 * **Aplicação Web (Frontend — Netlify):** `https://SEU-LINK-DO-NETLIFY.netlify.app` *(Substituir após o deploy)*
 * **API & Documentação Swagger (Backend — Render):** `https://SEU-LINK-DO-RENDER.onrender.com/docs` *(Substituir após o deploy)*
-* **Repositório Oficial:** [github.com/Israzuba0023/G10-LATAM-equipo-23-Mediflow](https://github.com/Israzuba0023/G10-LATAM-equipo-23-Mediflow)
-
+* **Repositório Oficial:** [[github.com/Israzuba0023/G10-LATAM-equipo-23-Mediflow](https://github.com/No-Country-simulation/G10-LATAM-equipo-23-Mediflow)
 ---
 
 ## Sobre o Projeto
