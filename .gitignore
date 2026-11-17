@@ -1,0 +1,13 @@
+.env
+.venv/
+backend/.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+backend/data/
+
+# Recursos visuais da apresentação devem permanecer versionados.
+!docs/
+!docs/media/
+!docs/media/.gitkeep
