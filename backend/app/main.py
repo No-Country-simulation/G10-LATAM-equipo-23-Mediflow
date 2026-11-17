@@ -649,3 +649,5 @@ async def process_clinical_file(
 
     return await run_in_threadpool(
         _process_clinical_
+pii_mapping,
+    )
