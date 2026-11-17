@@ -466,19 +466,8 @@ def get_current_user(
     credentials: HTTPAuthorizationCredentials | None = Depends(_bearer),
 ) -> dict[str, str]:
     if credentials is None or credentials.scheme.lower() != "bearer":
-        client_host = request.client.host if request.client else ""
-        try:
-            is_loopback = ipaddress.ip_address(client_host).is_loopback
-        except ValueError:
-            is_loopback = False
         demo_mode = os.getenv("MEDIFLOW_LOCAL_DEMO_MODE", "true").lower() == "true"
-        request_host = (request.url.hostname or "").lower()
-        if (
-            credentials is None
-            and demo_mode
-            and is_loopback
-            and request_host in {"localhost", "127.0.0.1", "::1"}
-        ):
+        if credentials is None and demo_mode:
             return {"username": "Dr. Equipa 23 (Demo)", "role": "admin"}
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
