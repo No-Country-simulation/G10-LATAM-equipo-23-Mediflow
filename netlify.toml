@@ -1,0 +1,10 @@
+[build]
+  base = ""
+  publish = "frontend"
+  command = ""
+  functions = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
