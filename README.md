@@ -164,8 +164,8 @@ Projeto idealizado e desenvolvido pelo **Grupo 23**:
 | :--- | :--- |
 | **Israel Cassute** | [linkedin.com/in/israel-cassute](https://www.linkedin.com/in/israel-cassute/) |
 | **Matheus Nunes** | [linkedin.com/in/matheus-nunes-a02769431](https://www.linkedin.com/in/matheus-nunes-a02769431/) |
-| **Rafael Silva** | — |
-| **Samuel Vaz** | — |
+| **Rafael Silva** | [linkedin.com/in/rafael-felipe-da-silva-2973b4286/](https://www.linkedin.com/in/rafael-felipe-da-silva-2973b4286/)  |
+| **Samuel Vaz** | [linkedin.com/in/samuel-vaz-72b8a8255/](https://www.linkedin.com/in/samuel-vaz-72b8a8255/)  |
 
 ---
 
